@@ -1,6 +1,6 @@
 {
   "name": "generator-wvu-twig-component",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description":
     "Generate files for a twig component on WVU Online Drupal themes",
   "homepage": "https://github.com/wvu-online/wvu-twig-component-generator",
