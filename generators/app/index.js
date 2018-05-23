@@ -5,6 +5,34 @@ const yosay = require('yosay');
 const _ = require('lodash');
 
 module.exports = class extends Generator {
+  constructor(args, opts) {
+    super(args, opts);
+    this.componentName = {};
+    this.componentName.raw = this.props.componentName;
+    this.componentName.dashed = _.kebabCase(this.props.name);
+    this.componentName.snaked = _.snakeCase(this.props.name);
+    this.componentName.camel = _.camelCase(this.props.name);
+    this.componentBase = {};
+    switch (this.props.componentType) {
+      case 'Atom':
+        this.componentBase = '01-atoms';
+        break;
+      case 'Molecule':
+        this.componentBase = '02-molecules';
+        break;
+      case 'Organism':
+        this.componentBase = '03-organisms';
+        break;
+      case 'Template':
+        this.componentBase = '04-templates';
+        break;
+      case 'Page':
+        this.componentBase = '05-pages';
+        break;
+      default:
+    }
+  }
+
   prompting() {
     // Have Yeoman greet the user.
     this.log(
@@ -47,33 +75,6 @@ module.exports = class extends Generator {
       // To access props later use this.props.someAnswer;
       this.props = props;
     });
-  }
-
-  initializing() {
-    this.componentName = {};
-    this.componentName.raw = this.props.componentName;
-    this.componentName.dashed = _.kebabCase(this.props.name);
-    this.componentName.snaked = _.snakeCase(this.props.name);
-    this.componentName.camel = _.camelCase(this.props.name);
-    this.componentBase = {};
-    switch (this.props.componentType) {
-      case 'Atom':
-        this.componentBase = '01-atoms';
-        break;
-      case 'Molecule':
-        this.componentBase = '02-molecules';
-        break;
-      case 'Organism':
-        this.componentBase = '03-organisms';
-        break;
-      case 'Template':
-        this.componentBase = '04-templates';
-        break;
-      case 'Page':
-        this.componentBase = '05-pages';
-        break;
-      default:
-    }
   }
 
   writing() {
