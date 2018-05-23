@@ -1,9 +1,9 @@
 {
-  "name": "wvu-twig-component-generator",
+  "name": "generator-wvu-twig-component",
   "version": "0.0.1",
   "description":
     "Generate files for a twig component on WVU Online Drupal themes",
-  "homepage": "https://wvu-online.github.io/wvu-twig-component-generator",
+  "homepage": "https://github.com/wvu-online/wvu-twig-component-generator",
   "author": {
     "name": "Gregg Shanefelt-WVU Online",
     "email": "gregg.shanefelt@mail.wvu.edu",
@@ -30,6 +30,8 @@
   },
   "dependencies": {
     "chalk": "^2.1.0",
+    "generator-wvu-twig-component": "^0.0.1",
+    "global": "^4.3.2",
     "lowdash": "^1.2.0",
     "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.1"
