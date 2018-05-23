@@ -5,5 +5,10 @@
       "authorEmail": "gregg.shanefelt@mail.wvu.edu",
       "authorUrl": ""
     }
+  },
+  "generator-wvu-twig-component": {
+    "promptValues": {
+      "plType": "Drupal"
+    }
   }
 }

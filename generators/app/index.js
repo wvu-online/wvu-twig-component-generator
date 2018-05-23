@@ -5,17 +5,6 @@ const yosay = require('yosay');
 const _ = require('lodash');
 
 module.exports = class extends Generator {
-  // Constructor(args, opts) {
-  // super(args, opts);
-  //   this.argument('name', {type: String, required: true})
-  //   this.componentName = {};
-  //   this.componentName.raw = this.props.componentName;
-  //   this.componentName.dashed = _.kebabCase(this.props.name);
-  //   this.componentName.snaked = _.snakeCase(this.props.name);
-  //   this.componentName.camel = _.camelCase(this.props.name);
-  //   this.componentBase = {};
-  // }
-
   prompting() {
     // Have Yeoman greet the user.
     this.log(
@@ -90,7 +79,13 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
           this.templatePath('name-pl.js'),
           this.destinationPath(
-            'components/_patterns/' + componentBase + '/' + componentName.dashed + '.js'
+            'components/_patterns/' +
+              componentBase +
+              '/' +
+              componentName.dashed +
+              '/' +
+              componentName.dashed +
+              '.js'
           ),
           {
             name: componentName.raw,
@@ -103,7 +98,13 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
           this.templatePath('name.js'),
           this.destinationPath(
-            'components/_patterns/' + componentBase + '/' + componentName.dashed + '.js'
+            'components/_patterns/' +
+              componentBase +
+              '/' +
+              componentName.dashed +
+              '/' +
+              componentName.dashed +
+              '.js'
           ),
           {
             name: componentName.raw,
@@ -119,7 +120,13 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('name.twig'),
       this.destinationPath(
-        'components/_patterns/' + componentBase + '/' + componentName.dashed + '.twig'
+        'components/_patterns/' +
+          componentBase +
+          '/' +
+          componentName.dashed +
+          '/' +
+          componentName.dashed +
+          '.twig'
       ),
       {
         name: componentName.raw,
@@ -133,7 +140,13 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('_name.scss'),
       this.destinationPath(
-        'components/_patterns/' + componentBase + '/' + componentName.dashed + '.scss'
+        'components/_patterns/' +
+          componentBase +
+          '/' +
+          componentName.dashed +
+          '/' +
+          componentName.dashed +
+          '.scss'
       ),
       {
         name: componentName.raw,
@@ -147,7 +160,13 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('name.yml'),
       this.destinationPath(
-        'components/_patterns/' + componentBase + '/' + componentName.dashed + '.yml'
+        'components/_patterns/' +
+          componentBase +
+          '/' +
+          componentName.dashed +
+          '/' +
+          componentName.dashed +
+          '.yml'
       ),
       {
         name: componentName.raw,
@@ -159,6 +178,6 @@ module.exports = class extends Generator {
   }
 
   install() {
-    this.installDependencies();
+    this.log('Created ' + this.props.name);
   }
 };
