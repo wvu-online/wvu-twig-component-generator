@@ -13,6 +13,7 @@ npm install -g generator-wvu-twig-component
 Then generate your new project:
 
 ```bash
+// In your theme directory
 yo wvu-twig-component
 ```
 
@@ -25,7 +26,7 @@ yo wvu-twig-component
 
 ## License
 
-GPL-3.0 © [Gregg Shanefelt-WVU Online]()
+GPL-2.0 © 
 
 
 [npm-image]: https://badge.fury.io/js/generator-wvu-twig-component.svg
